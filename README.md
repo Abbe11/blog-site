@@ -1,16 +1,38 @@
-# React + Vite
+# Blog Site
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A single-page blog built with **React + Vite** that renders a list of articles from a data source and lets the reader open any article to read it in full. Built to practice the core React model: a component tree, data passed down through props, and conditional rendering driven by state.
 
-Currently, two official plugins are available:
+Built as a components-and-props lab for the Moringa School software engineering program.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Features
 
-## React Compiler
+- Article feed rendered from a data file by mapping over an array
+- Click an article to view its full content; click back to return to the list
+- Reusable, presentational components composed into a clear tree
+- An About section describing the blog
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Built with
 
-## Expanding the ESLint configuration
+- React 18 - functional components and props
+- Vite - dev server and production build
+- Plain CSS
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Architecture
+
+- `App.jsx` - top of the component tree; holds which article is selected and passes data down
+- `Header` - site title and navigation
+- `ArticleList` - maps over the article data and renders a card per article
+- `Article` - renders a single article's title and body from props
+- `About` - static section about the blog
+- `blog.js` - the article data the tree renders
+
+## Run locally
+
+```bash
+git clone https://github.com/Abbe11/blog-site.git
+cd blog-site
+npm install
+npm run dev
+```
+
+Then open http://localhost:5173
